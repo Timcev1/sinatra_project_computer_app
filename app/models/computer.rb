@@ -1,4 +1,3 @@
 class Computer < ActiveRecord::Base
-  has_many :graphic
-  has_many :processor
+  belongs_to :user
 end

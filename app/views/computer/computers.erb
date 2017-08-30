@@ -1,0 +1,11 @@
+<h2> Welcome <%= current_user.username %></h2>
+<h2> A list of all Computers </h2>
+
+<% @computers.each do |comp| %>
+  <div>
+    <%= comp.user.username %>
+    <%= comp.graphics_card %>
+    <%= comp.processor %>
+    <%= comp.processor_speed %>
+  </div>
+<% end %>
