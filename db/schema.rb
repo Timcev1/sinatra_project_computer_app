@@ -20,8 +20,6 @@ ActiveRecord::Schema.define(version: 20170830161334) do
 
   create_table "graphics", force: :cascade do |t|
     t.string "name"
-    t.integer "model_number"
-    t.string "graphics_manufactor"
   end
 
   create_table "processor", force: :cascade do |t|
