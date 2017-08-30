@@ -1,0 +1,11 @@
+<p><%= @computer.name %></p>
+<p><%= @computer.graphics_card %></p>
+<p><%= @computer.processor %></p>
+<p><%= @computer.processor_speed %></p>
+
+<form method="post" action="/computer/<%=@computer.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete computer">
+</form>
+
+<a href="/computer/<%=@computers.id%>/edit">Edit Tweet </a>

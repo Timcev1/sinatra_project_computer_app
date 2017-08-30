@@ -1,8 +1,9 @@
-<p> Here is your Computer, <%= @user.username %> </p>
+<p> Here is your Computer or computers, <%= @user.username %> </p>
 <% @user.computer.each do |com| %>
   <div>
     <%= com.name %>
-    <%= com.graphics %>
+    <%= com.graphics_card %>
     <%= com.processor %>
+    <%= com.processor_speed %>
   </div>
 <% end %>
