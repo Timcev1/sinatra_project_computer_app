@@ -69,5 +69,6 @@ class ComputerController < ApplicationController
       redirect to '/login'
     end
   end
+end
 
 end
