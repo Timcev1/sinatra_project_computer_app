@@ -10,21 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830161334) do
+ActiveRecord::Schema.define(version: 20170830161110) do
 
   create_table "computer", force: :cascade do |t|
     t.string "name"
-    t.integer "processor_id"
-    t.integer "graphic_id"
-  end
-
-  create_table "graphics", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "processor", force: :cascade do |t|
-    t.string "name"
-    t.integer "speed"
+    t.string "processor"
+    t.integer "processor_speed"
+    t.string "graphics_card"
   end
 
   create_table "users", force: :cascade do |t|
