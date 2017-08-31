@@ -1,27 +1,26 @@
 class ComputerController < ApplicationController
-  get '/computers' do
-    if logged_in?
-      @computers = Computer.all
-      erb :'computer/computers'
-    else
-      redirect to '/login'
-  end
 
-  get '/computer/create_new' do
+
+  get '/create' do
     if logged_in?
-      erb :'computer/create_new'
+      erb :'computer/create'
     else
       redirect to '/login'
     end
   end
 
-  post '/computer' do
+  post '/create' do
     if params[:name] == ""
       redirect to "/computer/create_new"
     else
-      @computer = current_user.computer.create(name: params[:name], processor: params[:processor], processor_speed: params[:processor_speed], graphics_card: params[:graphics_card])
+      @computer = current_user.computers.create(name: params[:name], processor: params[:processor], processor_speed: params[:processor_speed], graphics_card: params[:graphics_card])
       redirect to "/computer/#{@computer.id}"
     end
+  end
+
+  get '/computers' do
+      @computers = Computer.all
+      erb :'computer/computers'
   end
 
   get '/computer/:id' do
@@ -52,7 +51,7 @@ class ComputerController < ApplicationController
       @computer.processor_speed = params[:processor_speed]
       @computer.graphics_card = params[:graphics_card]
       @computer.save
-      redirect to "/computer/#{@computer.id}"
+      redirect to "/computer/#{params[:id]}"
     end
   end
 
@@ -69,6 +68,4 @@ class ComputerController < ApplicationController
       redirect to '/login'
     end
   end
-end
-
 end

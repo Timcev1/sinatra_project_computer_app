@@ -4,6 +4,17 @@
     <title>Computer Comparer</title>
   </head>
   <body>
+    <nav>
+      <% if logged_in? %>
+        <a href="/create"> Create a New computer   </a>
+        <a href="/logout">   Log Out </a>
+        <a href="/computers">   All computers </a>
+        <p>Welcome, <%=current_user.username %></p>
+      <% else %>
+        <a href="/signup">Sign Up</a>
+        <a href="/login"> Sign In </a>
+      <%end %>
+    </nav>
 
     <%= yield %>
 

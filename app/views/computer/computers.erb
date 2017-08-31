@@ -1,12 +1,16 @@
-<h2> Welcome <%= current_user.username %></h2>
+<% if logged_in? %>
+  <h2> Welcome, <%= current_user.username %></h2>
+<% else %>
+  <h2> Welcome, guest </h2>
+<%end%>
+
 <h2> A list of all Computers </h2>
 
 <% @computers.each do |comp| %>
   <div>
-    <%= comp.user.username %>
-    <%= comp.name %>
-    <%= comp.graphics_card %>
-    <%= comp.processor %>
-    <%= comp.processor_speed %>
+    <h4><%= comp.user.username %> <%= comp.name %></b></h4>
+    <p>Graphics Card: <b><%= comp.graphics_card %></b></p>
+    <p>Processor brand: <b><%= comp.processor %></b></p>
+    <p><b><%= comp.processor_speed %></b> ghz</p>
   </div>
 <% end %>

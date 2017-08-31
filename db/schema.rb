@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831041635) do
+ActiveRecord::Schema.define(version: 20170831123108) do
 
   create_table "computers", force: :cascade do |t|
     t.string "name"
     t.string "processor"
     t.integer "processor_speed"
     t.string "graphics_card"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
