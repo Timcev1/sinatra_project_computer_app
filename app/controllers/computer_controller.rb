@@ -9,7 +9,7 @@ class ComputerController < ApplicationController
 
   get '/computer/create_new' do
     if logged_in?
-      erb :'tweets/create_tweet'
+      erb :'computer/create_new'
     else
       redirect to '/login'
     end

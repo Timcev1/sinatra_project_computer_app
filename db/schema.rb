@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830161110) do
+ActiveRecord::Schema.define(version: 20170831041635) do
 
-  create_table "computer", force: :cascade do |t|
+  create_table "computers", force: :cascade do |t|
     t.string "name"
     t.string "processor"
     t.integer "processor_speed"
