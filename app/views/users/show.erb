@@ -1,10 +1,10 @@
 <p> Here is your Computer or computers</p>
-<% @user.computer.each do |com| %>
+<% @user.computers.each do |com| %>
   <div>
-    <%= com.name %>
-    <%= com.graphics_card %>
-    <%= com.processor %>
-    <%= com.processor_speed %>
+    <h4>Computer Name: <%= com.name %></h4>
+    <p> Graphics Card: <%= com.graphics_card %></p>
+    <p> Processor: <%= com.processor %></p>
+    <p> Processor speed in Ghz: <%= com.processor_speed %></p>
     <a href="/computer/<%=com.id%>/edit">Edit this computer</a>
   </div>
 <% end %>

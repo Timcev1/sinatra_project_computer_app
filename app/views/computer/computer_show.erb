@@ -1,10 +1,13 @@
-<h3><%= @computer.name %></h3>
-<p><%= @computer.graphics_card %></p>
-<p><%= @computer.processor %></p>
-<p><%= @computer.processor_speed %></p>
+<h3>Computer's name: <b><%= @computer.name %></b></h3>
+<p>Graphics Card: <%= @computer.graphics_card %></p>
+<p>Processor: <%= @computer.processor %></p>
+<p>Processor speed in Ghz: <%= @computer.processor_speed %></p>
 
 <form method="post" action="/computers/<%=@computer.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete computer">
 </form>
-<a href="/computer/<%=@computer.id%>/edit">Edit</a>
+<form method="get" action="/computer/<%=@computer.id%>/edit">
+  <input id="hidden" type="hidden" name="_method" value="edit">
+  <input type="submit" value="Edit Computer">
+</form>

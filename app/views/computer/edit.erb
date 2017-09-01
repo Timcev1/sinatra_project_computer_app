@@ -1,5 +1,5 @@
 <h2>Edit a computer</h2>
-<form action="/computers/<%=@computer.id%>" method="POST">
+<form action="/computer/<%=@computer.id%>" method="post">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
   <p>Name of your computer: <input type="text" name="name" value="<%=@computer.name%>"></p>
   <p>Processor: <input type="text" name="processor" value="<%=@computer.processor%>"></p>

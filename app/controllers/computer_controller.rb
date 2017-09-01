@@ -43,7 +43,7 @@ class ComputerController < ApplicationController
 
   patch '/computer/:id' do
     if params[:name] == ""
-      redirect to "/computer/#{params[:id]}/edit"
+      redirect "/computer/#{params[:id]}/edit"
     else
       @computer = Computer.find_by_id(params[:id])
       @computer.name = params[:name]
@@ -51,7 +51,7 @@ class ComputerController < ApplicationController
       @computer.processor_speed = params[:processor_speed]
       @computer.graphics_card = params[:graphics_card]
       @computer.save
-      redirect to "/computer/#{params[:id]}"
+      redirect to "/computer/#{@computer.id}"
     end
   end
 
